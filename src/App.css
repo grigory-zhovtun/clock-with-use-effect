@@ -1,6 +1,8 @@
 .App {
-  text-align: center;
-  padding-top: 50vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
   font-size: 78px;
   font-weight: 700;
   color: darkgoldenrod;
