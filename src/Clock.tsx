@@ -6,7 +6,7 @@ const Clock = () => {
     const addZero = (num: number) => num < 10 ? "0" + num: num
 
     useEffect(() => {
-        setInterval(() => {
+        const intervalID = setInterval(() => {
             const currentTime = new Date()
             const currenHour = addZero(currentTime.getHours())
             const currentMinutes = addZero(currentTime.getMinutes())
@@ -15,6 +15,10 @@ const Clock = () => {
 
             setTime(newTime)
         }, 1000)
+
+        return () => {
+            clearInterval(intervalID)
+        }
     }, [])
 
     return (
